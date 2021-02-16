@@ -1,0 +1,67 @@
+{
+  "name": "youtube-tv",
+  "productName": "YouTube TV",
+  "version": "1.0.11",
+  "description": "A way to use YouTube TV on your computer.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "void206551",
+    "email": "void206551@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./src/app.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "setupExe": "youtubepc.exe",
+            "name": "YouTubePC",
+            "title": "Youtube TV PC",
+            "setupIcon": "./src/app.ico",
+            "description": "A way to use YouTube TV on your computer.",
+            "loadingGif": "src/loading.gif",
+            "iconUrl": "https://i.imgur.com/EDNBMFU.png"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "electron": "11.2.3",
+    "electron-devtools-installer": "^3.1.1"
+  }
+}
